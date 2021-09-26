@@ -1,0 +1,57 @@
+{
+  "name": "zeiss-coding-challenge-gui-aw",
+  "version": "0.0.1",
+  "description": "Zeiss Coding Challenge GUI André Wetzel",
+  "author": "André Wetzel",
+  "email": "andre@dynamic-reel.com",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+
+    "dev:gui:start": "cd ./gui && npm run build:dev",
+    "dev:middleware:start": "cd ./middleware && npm run start:dev",
+    "dev:all:start": "npm run dev:gui:start && npm run dev:middleware:start",
+
+
+    "api:start": "cd ./api && npm run start:dev",
+    "gui:client:start": "cd ./gui && npm run build:dev",
+    "dev:gui:middleware:start": "cd ./middleware && npm run start:dev",
+
+    "all:start:dev": "npm run gui:client:start & npm run dev:gui:middleware:start",
+
+
+    "api:build": "",
+    "gui:client:build": "",
+    "gui:server:build": "",
+    "middleware:build": "cd ./gui/middleware && npm run build",
+    "gui:server:start": "cd ./gui/server && npm run start && npm run start:dev",
+    "gui:middleware:start": "cd ./gui/middleware && npm run start:dev",
+    "gui:middleware:start:2": "npm run middleware:build && cd ./gui/middleware && npm run start",
+    "mw:start": "cd ./gui/server && npm run start2:dev",
+    "dev:api:start": "cd ./api && npm run start:dev",
+    "dev:gui:client:start": "cd ./gui/client && npm run build:out:dev",
+    "prebuild": "rimraf dist",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "startnew": "ts-node -r tsconfig-paths/register src/main.ts",
+    "startnew:dev": "nodemon",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config ./src/ormconfig.ts",
+    "typeorm:migrate": "npm run typeorm migration:generate -- -n",
+    "typeorm:run": "npm run typeorm migration:run",
+    "globals:api": "rm -rf api/src/_globals/ && cp -av ./_globals ./api/src/_globals",
+    "globals:gui:client": "rm -rf gui/client/src/_globals/ && cp -av ./_globals ./gui/client/src/_globals",
+    "globals:gui:middleware": "rm -rf gui/middleware/src/_globals/ && cp -av ./_globals ./gui/middleware/src/_globals",
+    "globals:gui:server": "rm -rf gui/server/src/_globals/ && cp -av ./_globals ./gui/server/src/_globals",
+    "copy:globals": "npm run globals:api & npm run globals:gui:client & npm run globals:gui:middleware"
+  }
+}

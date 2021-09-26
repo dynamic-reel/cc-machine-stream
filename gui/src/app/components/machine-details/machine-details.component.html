@@ -1,0 +1,31 @@
+<!-- machine details: machineid: {{ machineid }} -->
+
+<div id="detailsWrapper" style="">
+    <div id="detailsContent" class="text-gray-900 dark:text-white" [class.show]="showData">
+
+        <!-- <div style="height: 400px;">machine details: machineid: {{ machineid }}</div> -->
+
+        <div class="left sticky-top" style="">
+            <div><h3>Machine ID: {{ data.id }}</h3></div>
+            <div><h3>Floor: {{ data.floor }}</h3></div>
+            <div><h3>Longitude: {{ data.longitude }}</h3></div>
+            <div><h3>Latitude: {{ data.latitude }}</h3></div>
+        </div>
+
+        <div class="right" style="">
+            <div *ngFor="let event of data.events" class="event-item">
+                <div class="timestamp">{{ event.timestamp }}</div>
+                <div class="status">{{ event.status }}</div>
+            </div>
+        </div>
+
+        <!-- <div> -->
+
+            <!-- <div class="header sticky-top z-10 bg-white dark:bg-gray-800">HEADER: {{ machineid }}</div>
+
+            <div style="height: 500px;">data...</div> -->
+
+        <!-- </div> -->
+
+    </div>
+</div>

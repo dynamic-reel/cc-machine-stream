@@ -1,0 +1,13 @@
+
+version: '3.6'
+
+services:
+
+    gui:
+        container_name: zeiss_gui
+        image: zeiss-gui:0.0.1
+        build:
+            context: ./
+        ports:
+            - 80:80
+        restart: on-failure

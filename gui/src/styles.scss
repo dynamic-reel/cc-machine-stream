@@ -1,0 +1,67 @@
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    font-size: 14px;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#master {
+    // border: 2px dotted orange;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    box-shadow: 0 0 20px black;
+    transform: translateX(0);
+    transition: transform 400ms ease-in-out;
+
+    &.show-profile {
+        transform: translateX(300px);
+    }
+}
+
+#profile {
+    height: 100%;
+    overflow: auto;
+
+    .profile-image {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 1px solid black;
+        overflow: hidden;
+        object-fit: contain;
+    }
+}
+
+#navbar {
+    position: relative;
+    flex: 0 1 auto;
+}
+
+#routerOutlet {
+    // border: 2px dashed cyan;
+    position: relative;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}

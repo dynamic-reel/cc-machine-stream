@@ -1,0 +1,60 @@
+
+<div id="master" [class.show-profile]="profileOpen">
+
+    <div id="navbar" style="">
+        <app-navbar (profile)="profileOpenChange( $event )"></app-navbar>
+    </div>
+
+    <div id="routerOutlet" class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+
+        <router-outlet></router-outlet>
+
+    </div>
+
+</div>
+
+<div id="profile" class="bg-white dark:bg-gray-600 text-gray-900 dark:text-white p-10">
+
+    <div class="profile-image" style="">
+        <img src="./../assets/aw.jpg">
+    </div>
+
+    <section class="mt-20">
+        <h1>Coding Challenge</h1>
+    </section>
+
+    <section class="mt-10">
+        <div class="my-5">
+            <label>Name:</label>
+            <div>André Wetzel</div>
+        </div>
+        <div class="my-5">
+            <label>E-Mail:</label>
+            <div><a href="mailto:andre@dynamic-reel.com">andre@dynamic-reel.com</a></div>
+        </div>
+        <div class="my-5">
+            <label>Phone:</label>
+            <div>+49 . 151 . 240 51 621</div>
+        </div>
+    </section>
+
+</div>
+
+
+<!-- <div id="master">
+
+    <div id="navbar" style="height: 48px;"> -->
+        <!-- <app-navbar></app-navbar> -->
+        <!-- navbar
+    </div>
+
+    <div id="routerOutlet" class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+
+        <router-outlet></router-outlet> -->
+
+        <!-- <app-qkb-loader></app-qkb-loader> -->
+
+    <!-- </div>
+
+</div> -->
+
